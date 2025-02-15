@@ -45,6 +45,56 @@ img {
 /*-----------------------------------------------------*/
 
 .header {
+	height: 100vh;
+	position: relative;
+	&__logo {
+		top: 50%;
+		left: 50%;
+		position: absolute;
+		transform: translate(-50%, -50%);
+	}
+	&__text {
+		left: 50%;
+		bottom: 5.5%;
+		color: #fff;
+		font-size: 19px;
+		position: absolute;
+		transform: translateX(-50%);
+	}
+}
+
+.slider {
+	z-index: -1;
+	height: 100%;
+	display: flex;
+	overflow: hidden;
+	position: relative;
+	align-items: center;
+	justify-content: space-between;
+	
+	&__left, &__right {
+		flex: 1;
+		height: 100%;
+		overflow: hidden;
+    position: relative;
+		img {
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	&__slideReveal {
+		animation: revealDown 1s ease-in-out forwards;
+	}
+	
+	&__slideRevealReverse {
+		animation: revealUp 1s ease-in-out forwards;
+	}
+
+	&__zoom {
+    animation: zoomEffect 5s ease-in-out forwards;
+  }
 }
 
 /*-----------------------------------------------------*/
@@ -177,4 +227,23 @@ img {
 
 @media only screen and (max-width: 769px) {
 	@import "_sp";
+}
+
+/*-----------------------------------------------------*/
+// Keyframe
+/*-----------------------------------------------------*/
+
+@keyframes revealDown {
+  0% { clip-path: inset(0 0 100% 0); }
+  100% { clip-path: inset(0); }
+}
+
+@keyframes revealUp {
+  0% { clip-path: inset(100% 0 0 0); }
+  100% { clip-path: inset(0); }
+}
+
+@keyframes zoomEffect {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
 }

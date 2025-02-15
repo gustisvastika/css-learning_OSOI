@@ -1,0 +1,352 @@
+@charset "UTF-8";
+/* Box sizing rules */
+/* Box sizingの定義 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+/* デフォルトのpaddingを削除 */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+/* デフォルトのmarginを削除 */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+/* bodyのデフォルトを定義 */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+/* class属性を持つul、ol要素のリストスタイルを削除 */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+/* classを持たない要素はデフォルトのスタイルを取得 */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+/* img要素の扱いを簡単にする */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+/* article要素内の要素に自然な流れとリズムを定義 */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+/* inputやbuttonなどのフォントは継承を定義 */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+/* 見たくない人用に、すべてのアニメーションとトランジションを削除 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "avenir-medium";
+  src: url("../fonts/AvenirNext-Medium.otf") format("opentype"), url("../fonts/AvenirNext-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "avenir-regular";
+  src: url("../fonts/AvenirNext-Regular.otf") format("opentype"), url("../fonts/AvenirNext-Regular.ttf") format("truetype");
+}
+/* common */
+body {
+  background: #f7f3ed;
+  color: #333333;
+  font-family: "avenir-regular", sans-serif;
+}
+
+a {
+  color: deepskyblue;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+a:hover {
+  color: #66d9ff;
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+}
+
+a:focus,
+*:focus {
+  outline: none;
+}
+
+/* print */
+@media print {
+  * html body {
+    zoom: 0.7;
+  }
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
+}
+
+.pc {
+  display: block;
+}
+
+.sp {
+  display: none;
+}
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+body {
+  word-break: break-all;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.msg {
+  font-size: 13px;
+  font-size: 1.3rem;
+  font-family: "avenir-medium", sans-serif;
+}
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+.header {
+  height: 100vh;
+  position: relative;
+}
+.header__logo {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.header__text {
+  left: 50%;
+  bottom: 5.5%;
+  color: #fff;
+  font-size: 19px;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.slider {
+  z-index: -1;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+.slider__left, .slider__right {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.slider__left img, .slider__right img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.slider__slideReveal {
+  animation: revealDown 1s ease-in-out forwards;
+}
+.slider__slideRevealReverse {
+  animation: revealUp 1s ease-in-out forwards;
+}
+.slider__zoom {
+  animation: zoomEffect 5s ease-in-out forwards;
+}
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+.fade {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: 1s;
+}
+
+.fade__on {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+.menubar {
+  position: fixed;
+  z-index: 2000;
+  right: -1px;
+  top: 0;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.menubar .menubar__trigger {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: #333333;
+  vertical-align: bottom;
+}
+.menubar .menubar__trigger span {
+  display: inline-block;
+  transition: all 0.4s;
+  box-sizing: border-box;
+  position: absolute;
+  left: 25%;
+  width: 50%;
+  height: 1px;
+  background-color: #fff;
+}
+.menubar .menubar__trigger span:nth-of-type(1) {
+  top: 19px;
+}
+.menubar .menubar__trigger span:nth-of-type(2) {
+  top: 29px;
+}
+.menubar .menubar__trigger span:nth-of-type(3) {
+  top: 39px;
+}
+.menubar .menubar__trigger.active {
+  background: #fff;
+}
+.menubar .menubar__trigger.active span {
+  background: #333333;
+}
+.menubar .menubar__trigger.active span:nth-of-type(1) {
+  -webkit-transform: translateY(10px) rotate(-45deg);
+  transform: translateY(10px) rotate(-45deg);
+}
+.menubar .menubar__trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.menubar .menubar__trigger.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-10px) rotate(45deg);
+  transform: translateY(-10px) rotate(45deg);
+}
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+@media only screen and (max-width: 769px) {
+  .pc {
+    display: none;
+  }
+  .sp {
+    display: block;
+  }
+  /*-----------------------------------------------------*/
+  /*-----------------------------------------------------*/
+}
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+@keyframes revealDown {
+  0% {
+    clip-path: inset(0 0 100% 0);
+  }
+  100% {
+    clip-path: inset(0);
+  }
+}
+@keyframes revealUp {
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0);
+  }
+}
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
