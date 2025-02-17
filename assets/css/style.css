@@ -53,7 +53,8 @@ ol[class] {
 /* A elements that don't have a class get default styles */
 /* classを持たない要素はデフォルトのスタイルを取得 */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
@@ -178,39 +179,80 @@ img {
 
 /*-----------------------------------------------------*/
 /*-----------------------------------------------------*/
-.header {
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+.nav {
+  top: 0;
+  width: 100%;
+  display: flex;
+  z-index: 99999;
+  padding: 15px 35px;
+  position: absolute;
+}
+.nav__logo {
+  max-width: 100px;
+  mix-blend-mode: lighten;
+  opacity: 0.7;
+}
+.nav__item {
+  gap: 35px;
+  width: 100%;
+  display: flex;
+  font-size: 12px;
+  font-weight: bold;
+  padding-left: 45px;
+  align-items: center;
+  justify-content: start;
+}
+.nav__item a {
+  color: #000;
+  margin-left: auto;
+  text-decoration: none;
+}
+.nav--fixed {
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+.main .hero {
   height: 100vh;
   position: relative;
 }
-.header__logo {
+.main .hero__logo {
   top: 50%;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
 }
-.header__logo #O1, .header__logo #S, .header__logo #O2, .header__logo #I {
-  transform: translateY(200px);
-  animation: waveLoop 4s infinite ease-in-out;
+.main .hero__logo svg {
+  max-width: 280px;
+  width: 100%;
 }
-.header__logo #S {
+.main .hero__logo #O1, .main .hero__logo #S, .main .hero__logo #O2, .main .hero__logo #I {
+  transform: translateY(200px);
+  animation: wave-loop 4s infinite ease-in-out;
+}
+.main .hero__logo #S {
   animation-delay: 0.2s;
 }
-.header__logo #O2 {
+.main .hero__logo #O2 {
   animation-delay: 0.4s;
 }
-.header__logo #I {
+.main .hero__logo #I {
   animation-delay: 0.6s;
 }
-.header__text {
+.main .hero__text {
   left: 50%;
   bottom: 5.5%;
   color: #fff;
-  font-size: 19px;
+  font-size: 10px;
   position: absolute;
   transform: translateX(-50%);
 }
-
-.slider {
+.main .slider {
   z-index: -1;
   height: 100%;
   display: flex;
@@ -219,68 +261,65 @@ img {
   align-items: center;
   justify-content: space-between;
 }
-.slider__left, .slider__right {
+.main .slider__left, .main .slider__right {
   flex: 1;
   height: 100%;
   overflow: hidden;
   position: relative;
 }
-.slider__left img, .slider__right img {
-  object-fit: cover;
+.main .slider__left img, .main .slider__right img {
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 100%;
   width: 100%;
 }
-.slider__slideReveal {
-  animation: revealDown 1s ease-in-out forwards;
+.main .slider__slide-reveal {
+  animation: reveal-down 1s ease-in-out forwards;
 }
-.slider__slideRevealReverse {
-  animation: revealUp 1s ease-in-out forwards;
+.main .slider__slide-reveal-reverse {
+  animation: reveal-up 1s ease-in-out forwards;
 }
-.slider__zoom {
-  animation: zoomEffect 5s ease-in-out forwards;
+.main .slider__zoom {
+  animation: zoom-effect 5s ease-in-out forwards;
 }
-
-/*-----------------------------------------------------*/
-/*-----------------------------------------------------*/
-/*-----------------------------------------------------*/
-/*-----------------------------------------------------*/
-.main #sectionDescription {
+.main #section-description {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.main #sectionDescription .description {
+.main #section-description .description {
   text-align: center;
 }
-.main #sectionDescription .description__title {
-  margin-bottom: 40px;
+.main #section-description .description__title {
+  margin-bottom: 10px;
 }
-.main #sectionDescription .description__title img {
-  max-width: 200px;
+.main #section-description .description__title img {
+  max-width: 100px;
   margin: 0 auto;
 }
-.main #sectionDescription .description__title h2 {
+.main #section-description .description__title h2 {
+  font-size: 14px;
+  margin: 8px 0;
+}
+.main #section-description .description__content {
   margin: 15px 0;
+  font-size: 10px;
 }
-.main #sectionDescription .description__content {
-  margin: 50px 0;
-  font-size: 20px;
+.main #section-description .description__footer {
+  margin-top: 40px;
+  font-size: 10px;
 }
-.main #sectionDescription .description__footer {
-  margin-top: 60px;
-  font-size: 20px;
+.main #section-description .description__footer p {
+  margin-bottom: 10px;
 }
-.main #sectionDescription .description__footer p {
-  margin-bottom: 30px;
-}
-.main #sectionDescription .toggler {
+.main #section-description .toggler {
   display: flex;
   font-weight: bold;
   position: relative;
   justify-content: center;
 }
-.main #sectionDescription .toggler::before {
+.main #section-description .toggler::before {
   content: "";
   top: 50%;
   left: 50%;
@@ -289,23 +328,23 @@ img {
   border: 1px solid #000;
   transform: translate(-50%, -50%);
 }
-.main #sectionDescription .toggler input {
+.main #section-description .toggler input {
   display: none;
 }
-.main #sectionDescription .toggler--language {
+.main #section-description .toggler--language {
   gap: 60px;
-  font-size: 20px;
+  font-size: 10px;
 }
-.main #sectionDescription .toggler--language label {
-  width: 50px;
-  height: 50px;
+.main #section-description .toggler--language label {
+  width: 30px;
+  height: 30px;
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
   transition: color 0.3s ease-in-out;
 }
-.main #sectionDescription .toggler--language label::before {
+.main #section-description .toggler--language label::before {
   content: "";
   top: -50%;
   left: -50%;
@@ -317,42 +356,111 @@ img {
   transform: translate(50%, 50%);
   transition: border-color 0.3s ease-in-out;
 }
-.main #sectionDescription .toggler--language input:checked + label {
+.main #section-description .toggler--language input:checked + label {
   color: #000;
 }
-.main #sectionDescription .toggler--language input:checked + label::before {
+.main #section-description .toggler--language input:checked + label::before {
   border-color: #000;
 }
-.main #sectionDescription .toggler--language label:hover::before {
+.main #section-description .toggler--language label:hover::before {
   border-color: #000;
-  animation: borderCircle 0.5s linear forwards;
+  animation: border-circle 0.5s linear forwards;
 }
-.main #sectionDescription .toggler--category {
-  gap: 50px;
-  font-size: 24px;
+.main #section-description .toggler--category {
+  gap: 10px;
+  font-size: 14px;
 }
-.main #sectionDescription .toggler--category::before {
+.main #section-description .toggler--category::before {
   height: 100%;
 }
-.main #sectionDescription .toggler--category label {
-  padding: 20px 80px;
+.main #section-description .toggler--category label {
+  padding: 10px 40px;
 }
-@keyframes borderCircle {
+@keyframes border-circle {
   0% {
-    clip-path: inset(0 100% 0 0);
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
   }
   25% {
-    clip-path: inset(0 0 0 100%);
+    -webkit-clip-path: inset(0 0 0 100%);
+            clip-path: inset(0 0 0 100%);
   }
   50% {
-    clip-path: inset(100% 0 0 0);
+    -webkit-clip-path: inset(100% 0 0 0);
+            clip-path: inset(100% 0 0 0);
   }
   75% {
-    clip-path: inset(0 0 100% 0);
+    -webkit-clip-path: inset(0 0 100% 0);
+            clip-path: inset(0 0 100% 0);
   }
   100% {
-    clip-path: inset(0);
+    -webkit-clip-path: inset(0);
+            clip-path: inset(0);
   }
+}
+.main #section-product {
+  position: relative;
+}
+.main .product-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.main .product-container .product {
+  width: 50%;
+  position: relative;
+  height: 118.5vh;
+}
+.main .product-container .product--big {
+  width: 100%;
+}
+.main .product-container .product--category {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.main .product-container .product--category h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+.main .product-container .product--category p {
+  font-size: 12px;
+}
+.main .product-container .product__image {
+  height: 100%;
+}
+.main .product-container .product__image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main .product-container .product__image--with-frame {
+  padding: 120px 90px;
+}
+.main .product-container .product__image--right {
+  padding: 0 0 110px 135px;
+}
+.main .product-container .product__price {
+  width: 100%;
+  bottom: 40px;
+  font-size: 12px;
+  text-align: center;
+  position: absolute;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+.main .product-container .product__price--white {
+  color: #fff;
+}
+.main .product-container .product__price--multi {
+  gap: 40px;
+  display: flex;
+  justify-content: center;
+}
+.main #culture-girl {
+  padding-top: 144px;
 }
 
 /*-----------------------------------------------------*/
@@ -363,6 +471,46 @@ img {
 /*-----------------------------------------------------*/
 /*-----------------------------------------------------*/
 /*-----------------------------------------------------*/
+.footer {
+  gap: 55px;
+  height: 50vh;
+  display: flex;
+  padding: 30px 0;
+  align-items: center;
+  justify-content: end;
+  flex-direction: column;
+}
+.footer .store-link {
+  display: flex;
+}
+.footer .store-link a {
+  color: #000;
+  font-size: 14px;
+  padding: 10px 40px;
+  text-decoration: none;
+}
+.footer .store-link a:first-child {
+  border-right: 1px solid #000;
+}
+.footer .media-link {
+  text-align: center;
+}
+.footer .media-link p {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.footer .media-link .media-link__icon {
+  gap: 30px;
+  display: flex;
+  justify-content: center;
+}
+.footer .media-link .media-link__icon img {
+  width: 28px;
+}
+.footer__copyright {
+  font-size: 10px;
+}
+
 /*-----------------------------------------------------*/
 /*-----------------------------------------------------*/
 .fade {
@@ -425,14 +573,12 @@ img {
   background: #333333;
 }
 .menubar .menubar__trigger.active span:nth-of-type(1) {
-  -webkit-transform: translateY(10px) rotate(-45deg);
   transform: translateY(10px) rotate(-45deg);
 }
 .menubar .menubar__trigger.active span:nth-of-type(2) {
   opacity: 0;
 }
 .menubar .menubar__trigger.active span:nth-of-type(3) {
-  -webkit-transform: translateY(-10px) rotate(45deg);
   transform: translateY(-10px) rotate(45deg);
 }
 
@@ -450,23 +596,27 @@ img {
 }
 /*-----------------------------------------------------*/
 /*-----------------------------------------------------*/
-@keyframes revealDown {
+@keyframes reveal-down {
   0% {
-    clip-path: inset(0 0 100% 0);
+    -webkit-clip-path: inset(0 0 100% 0);
+            clip-path: inset(0 0 100% 0);
   }
   100% {
-    clip-path: inset(0);
+    -webkit-clip-path: inset(0);
+            clip-path: inset(0);
   }
 }
-@keyframes revealUp {
+@keyframes reveal-up {
   0% {
-    clip-path: inset(100% 0 0 0);
+    -webkit-clip-path: inset(100% 0 0 0);
+            clip-path: inset(100% 0 0 0);
   }
   100% {
-    clip-path: inset(0);
+    -webkit-clip-path: inset(0);
+            clip-path: inset(0);
   }
 }
-@keyframes zoomEffect {
+@keyframes zoom-effect {
   0% {
     transform: scale(1);
   }
@@ -474,7 +624,7 @@ img {
     transform: scale(1.1);
   }
 }
-@keyframes waveLoop {
+@keyframes wave-loop {
   0% {
     transform: translateY(200px);
   }

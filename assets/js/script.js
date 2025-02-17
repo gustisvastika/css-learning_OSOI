@@ -27,6 +27,27 @@ $(document).ready(function () {
     });
   }
 
-  initSwiper(".slider__left", "slider__slideReveal");
-  initSwiper(".slider__right", "slider__slideRevealReverse");
+  initSwiper(".slider__left", "slider__slide-reveal");
+  initSwiper(".slider__right", "slider__slide-reveal-reverse");
+
+  let sectionOffset = $("#section-product").offset().top;
+  $(window).on("scroll", function () {
+    if ($(window).scrollTop() >= sectionOffset) {
+      $(".nav").addClass("nav--fixed");
+    } else {
+      $(".nav").removeClass("nav--fixed");
+    }
+
+    let scrollPos = $(window).scrollTop();
+    let gentleLady = $("#gentle-lady").offset().top;
+    let cultureGirl = $("#culture-girl").offset().top;
+    let windowHeight = $(window).height();
+    if (scrollPos + windowHeight / 2 >= gentleLady && scrollPos + windowHeight / 2 < cultureGirl) {
+      $('#nav-item-1').text('(ㅤGentle Ladyㅤ)');
+      $('#nav-item-2').text('Culture Girl');
+    } else if (scrollPos + windowHeight / 2 >= cultureGirl) {
+      $('#nav-item-1').text('Handsome Lady');
+      $('#nav-item-2').text('(ㅤGentle Ladyㅤ)');
+    }
+  });
 });
