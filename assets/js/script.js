@@ -10,10 +10,8 @@ $(document).ready(function () {
       on: {
         init: function () {
           let firstSlide = $(`${selector} .swiper-slide-active img`);
-          setTimeout(() => {
-            firstSlide.addClass(`slider__zoom ${revealClass}`);
-            setTimeout(() => firstSlide.removeClass(revealClass), 1000);
-          }, 200);
+          firstSlide.addClass("slider__zoom");
+          setTimeout(() => firstSlide.removeClass("slider__zoom"), 4000);
         },
         slideChangeTransitionStart: function () {
           let activeSlide = $(`${selector} .swiper-slide-active img`);
