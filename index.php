@@ -58,23 +58,27 @@
                 <div class="slider">
                     <div class="swiper slider__left">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="./assets/images/250131 OSOI119996.jpg" alt="OSOI119996">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="./assets/images/250131 OSOI119926.jpg" alt="OSOI119926">
-                            </div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI119996.jpg" alt="OSOI119996"></div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI119225.jpg" alt="OSOI119225"></div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI119262.jpg" alt="OSOI119262"></div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI119593.jpg" alt="OSOI119593"></div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI119653.jpg" alt="OSOI119653"></div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI119801.jpg" alt="OSOI119801"></div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI119967.jpg" alt="OSOI119967"></div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI120133.jpg" alt="OSOI120133"></div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI120169.jpg" alt="OSOI120169"></div>
                         </div>
                     </div>
 
                     <div class="swiper slider__right">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="./assets/images/250131 OSOI119926.jpg" alt="OSOI119926">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="./assets/images/250131 OSOI119996.jpg" alt="OSOI119996">
-                            </div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI119926.jpg" alt="OSOI119926"></div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI119122.jpg" alt="OSOI119122"></div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI119129.jpg" alt="OSOI119129"></div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI119481.jpg" alt="OSOI119481"></div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI119726.jpg" alt="OSOI119726"></div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI119753.jpg" alt="OSOI119753"></div>
+                            <div class="swiper-slide"><img src="./assets/images/250131 OSOI120063.jpg" alt="OSOI120063"></div>
                         </div>
                     </div>
                 </div>
@@ -105,13 +109,10 @@
 					</div>
 					<div class="description__footer">
 						<p>(ㅤWhich style to look at it from?ㅤ)</p>
-						<div class="toggler toggler--category">
-							<input type="radio" id="opt-gentle-lady" name="language" value="gentle_lady" checked>
-							<label for="opt-gentle-lady">Gentle Lady</label>
-
-							<input type="radio" id="opt-culture-girl" name="language" value="culture_girl">
-							<label for="opt-culture-girl">Culture Girl</label>
-						</div>
+						<div class="category">
+                            <a class="category__item" data-category="gentle-lady" href="javascript:void(0)">Gentle Lady</a>
+                            <a class="category__item" data-category="culture-girl" href="javascript:void(0)">Culture Girl</a>
+                        </div>
 					</div>
 				</div>
 			</section>
@@ -266,16 +267,16 @@
 		
 		<footer class="footer">
             <div class="store-link">
-                <a href="#">Online Store</a>
-                <a href="#">Instagram</a>
+                <a href="javascript:void(0)">Online Store</a>
+                <a href="javascript:void(0)">Instagram</a>
             </div>
 
             <div class="media-link">
                 <p>Share on</p>
                 <div class="media-link__icon">
-                    <img src="./assets/images/logo/line.svg" alt="logo-OSOI">
-                    <img src="./assets/images/logo/x-twitter.svg" alt="logo-OSOI">
-                    <img src="./assets/images/logo/facebook.svg" alt="logo-OSOI">
+                    <a href="javascript:void(0)"><img src="./assets/images/logo/line.svg" alt="logo-OSOI"></a>
+                    <a href="javascript:void(0)"><img src="./assets/images/logo/x-twitter.svg" alt="logo-OSOI"></a>
+                    <a href="javascript:void(0)"><img src="./assets/images/logo/facebook.svg" alt="logo-OSOI"></a>
                 </div>
             </div>
 

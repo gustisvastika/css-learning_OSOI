@@ -6,6 +6,7 @@ $(document).ready(function () {
       speed: 1000,
       allowTouchMove: false,
       effect: "fade",
+      direction: window.innerWidth <= 769 ? "vertical" : "horizontal",
       fadeEffect: { crossFade: false },
       on: {
         init: function () {
@@ -27,8 +28,17 @@ $(document).ready(function () {
     });
   }
 
-  initSwiper(".slider__left", "slider__slide-reveal");
-  initSwiper(".slider__right", "slider__slide-reveal-reverse");
+  let swiperLeft = initSwiper(".slider__left", "slider__slide-reveal");
+  let swiperRight = initSwiper(".slider__right", "slider__slide-reveal-reverse");
+  window.addEventListener("resize", function () {
+    let newDirection = window.innerWidth <= 769 ? "vertical" : "horizontal";
+    if (swiper.params.direction !== newDirection) {
+      swiperLeft.destroy(true, true);
+      swiperLeft = initSwiper(".slider__left", "slider__slide-reveal");
+      swiperRight.destroy(true, true);
+      swiperRight = initSwiper(".slider__right", "slider__slide-reveal-reverse");
+    }
+  });
 
   let sectionOffset = $("#section-product").offset().top;
   $(window).on("scroll", function () {
@@ -48,6 +58,20 @@ $(document).ready(function () {
     } else if (scrollPos + windowHeight / 2 >= cultureGirl) {
       $('#nav-item-1').text('Handsome Lady');
       $('#nav-item-2').text('(ㅤGentle Ladyㅤ)');
+    }
+  });
+
+  $('.category__item').on('click', function() {
+    var category = $(this).data('category');
+
+    if (category === 'gentle-lady') {
+      $('#section-product .nav').prependTo('#section-product'); 
+      $('#section-product #gentle-lady').prependTo('#section-product');
+      $('#section-product #culture-girl').appendTo('#section-product');
+    } else if (category === 'culture-girl') {
+      $('#section-product .nav').prependTo('#section-product'); 
+      $('#section-product #culture-girl').prependTo('#section-product'); 
+      $('#section-product #gentle-lady').appendTo('#section-product');
     }
   });
 });

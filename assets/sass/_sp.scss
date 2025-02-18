@@ -11,3 +11,75 @@
 
 .header {
 }
+
+.nav {
+  padding: 15px 25px;
+  &__item {
+    gap: 25px;
+    justify-content: end;
+    a {
+      display: none;
+    }
+  }
+}
+
+.main {
+  .slider {
+    flex-direction: column;
+    &__slide-reveal {
+      animation: reveal-left 1s ease-in-out forwards;
+    }
+    
+    &__slide-reveal-reverse {
+      animation: reveal-right 1s ease-in-out forwards;
+    }
+  }
+  
+  .product-container {
+    .product {
+      width: 100%;
+      
+      &--category {
+        height: 50vh;
+      }
+
+      &__image {
+        height: 110vh;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+        &--with-frame {
+          padding: 0 45px;
+        }
+        &--right {
+          padding: 0 0 0 135px;
+        }
+      }
+
+      &__price {
+        color: #000 !important;
+      }
+    }
+  }
+
+  #gentle-lady {
+    .product:first-child {
+      order: 2;
+    }
+  }
+
+  #culture-girl { padding-top: 0px; }
+}
+
+.swiper {
+  margin: 0;
+  width: 100%;
+  .swiper-slide {
+    max-width: 100vw;
+  }
+}
+
+.footer {
+  height: 40vh;
+}

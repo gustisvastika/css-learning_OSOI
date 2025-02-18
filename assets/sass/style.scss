@@ -163,7 +163,7 @@ img {
 		.description {
 			text-align: center;
 			&__title {
-				margin-bottom: 10px;
+				margin-bottom: 15px;
 				img {
 					max-width: 100px;
 					margin: 0 auto;
@@ -183,6 +183,43 @@ img {
 				p { margin-bottom: 10px; }
 			}
 		}
+
+    .category {
+      display: flex;
+    
+      a {
+        color: #000;
+        font-size: 14px;
+        padding: 10px 40px;
+        text-decoration: none;
+        position: relative; 
+        transition: all 0.3s ease;
+    
+        &:first-child {
+          border-right: 1px solid #000;
+        }
+    
+        &:hover {
+          color: #000;
+        }
+    
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background-color: #000;
+          transform: translateX(-50%);
+          transition: width 0.3s ease;
+        }
+    
+        &:hover::after {
+          width: 50%;
+        }
+      }
+    }    
 
 		.toggler {
 			display: flex;
@@ -484,6 +521,16 @@ img {
 
 @keyframes reveal-up {
   0% { clip-path: inset(100% 0 0 0); }
+  100% { clip-path: inset(0); }
+}
+
+@keyframes reveal-left {
+  0% { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0); }
+}
+
+@keyframes reveal-right {
+  0% { clip-path: inset(0 0 0 100%); }
   100% { clip-path: inset(0); }
 }
 
