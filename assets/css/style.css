@@ -629,6 +629,7 @@ img {
   }
   .nav__item {
     gap: 25px;
+    padding: 0;
     justify-content: end;
   }
   .nav__item a {
